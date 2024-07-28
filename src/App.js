@@ -2,7 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
-import TodoList from './listObj/TodoList';
+import Count from './useReduce_hooks/Count';
 
 
 
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <TodoList />
+      <Count />
     </>
   )
 }

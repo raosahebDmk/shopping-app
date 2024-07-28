@@ -27,8 +27,7 @@ function A_Form(){
                 <br></br>
                 <button type='submit'>Submit</button>
             </div>
-            <pre>{(name)}</pre>
-            
+            <pre>{(name)}</pre>            
             <pre>{(email)}</pre>
         </form>
         </>

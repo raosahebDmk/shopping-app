@@ -1,37 +1,47 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export default function TodoList(){
 
-    
+    // Add user and delete user
+
     const [userList, setUserList] = useState([]);
-    const [activity, setActivity] = useState("");
+    const [user, setUser] = useState("");
 
     const refElement = useRef("");
 
+
+    useEffect(()=>
+        refElement.current.focus()
+    )
+
     function addUser()
     {
-        setUserList([...userList, activity])
-        console.log(userList)
-        setActivity("")
+        if(user===''){
+            alert("user field is empty...");
+            
+        }else{
+            setUserList([...userList, user])
+        }
+     
+        setUser("")
         refElement.current.focus();
     }
 
     function deletUser(index)
     {
         const updateUserData = userList.filter((Element, id)=>{
-            return index!=id;
+            return index!==id;
         })
         setUserList(updateUserData)
         
     }
-
-   
+  
 
 
     return(
         <>
             <h1>User List...</h1>
-            <input type="text" value={activity} ref={refElement} onChange={(e)=>setActivity(e.target.value)}/>
+            <input type="text" value={user} ref={refElement} onChange={(e)=>setUser(e.target.value)}/>
             <button onClick={addUser}>Add</button>
 
             <h2>user List:</h2>
